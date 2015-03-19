@@ -1210,7 +1210,7 @@ void check_score(bool& quit, string& state, int& score, vector< pair<string, int
     }
 }
 
-
+// Main
 int main( int argc, char* args[] )
 {
     //Make sure the program waits for a quit
