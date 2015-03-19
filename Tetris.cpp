@@ -573,27 +573,27 @@ bool load_files()
 {
     //Load the images
     
-    blockI = load_image("/Users/Martin/Documents/Skolan/LiU/HT -13/TDDI02/Tetris_Complete/Tetris_complete/Images/PNGs/blocks/I_Blue.png");
-    blockJ = load_image("/Users/Martin/Documents/Skolan/LiU/HT -13/TDDI02/Tetris_Complete/Tetris_Complete/Images/PNGs/blocks/J_Pink.png");
-    blockL = load_image("/Users/Martin/Documents/Skolan/LiU/HT -13/TDDI02/Tetris_Complete/Tetris_Complete/Images/PNGs/blocks/L_Bronze.png");
-    blockO = load_image("/Users/Martin/Documents/Skolan/LiU/HT -13/TDDI02/Tetris_Complete/Tetris_Complete/Images/PNGs/blocks/O_Red.png");
-    blockS = load_image("/Users/Martin/Documents/Skolan/LiU/HT -13/TDDI02/Tetris_Complete/Tetris_Complete/Images/PNGs/blocks/S_Yellow.png");
-    blockT = load_image("/Users/Martin/Documents/Skolan/LiU/HT -13/TDDI02/Tetris_Complete/Tetris_Complete/Images/PNGs/blocks/T_Orange.png");
-    blockZ = load_image("/Users/Martin/Documents/Skolan/LiU/HT -13/TDDI02/Tetris_Complete/Tetris_Complete/Images/PNGs/blocks/Z_Green.png");
-    edge = load_image("/Users/Martin/Documents/Skolan/LiU/HT -13/TDDI02/Tetris_Complete/Tetris_Complete/Images/PNGs/blocks/Edge.png");
-    background = load_image( "/Users/Martin/Documents/Skolan/LiU/HT -13/TDDI02/Tetris_Complete/Tetris_Complete/Background.png" );
-    background_menu = load_image( "/Users/Martin/Documents/Skolan/LiU/HT -13/TDDI02/Tetris_Complete/Tetris_Complete/Menu.png" );
-    background_hs = load_image( "/Users/Martin/Documents/Skolan/LiU/HT -13/TDDI02/Tetris_Complete/Tetris_Complete/Highscore_bg.png" );
-    transparent = load_image("/Users/Martin/Documents/Skolan/LiU/HT -13/TDDI02/Tetris_Complete/Tetris_Complete/Transparent_Enter.png");
+    blockI = load_image("Images/Blocks/I_Blue.png");
+    blockJ = load_image("Images/Blocks/J_Pink.png");
+    blockL = load_image("Images/Blocks/L_Bronze.png");
+    blockO = load_image("Images/Blocks/O_Red.png");
+    blockS = load_image("Images/Blocks/S_Yellow.png");
+    blockT = load_image("Images/Blocks/T_Orange.png");
+    blockZ = load_image("Images/Blocks/Z_Green.png");
+    edge = load_image("Images/Blocks/Edge.png");
+    background = load_image("Images/Background.png" );
+    background_menu = load_image("Images/Menu.png" );
+    background_hs = load_image("Images/Highscore_bg.png" );
+    transparent = load_image("Images/Transparent_Enter.png");
     
-    play_button = load_image("/Users/Martin/Documents/Skolan/LiU/HT -13/TDDI02/Tetris_Complete/Tetris_Complete/Images/PNGs/Play.png");
-    play_marked = load_image("/Users/Martin/Documents/Skolan/LiU/HT -13/TDDI02/Tetris_Complete/Tetris_Complete/Images/PNGs/Play2.png");
-    highscore_button = load_image("/Users/Martin/Documents/Skolan/LiU/HT -13/TDDI02/Tetris_Complete/Tetris_Complete/Images/PNGs/Highscore.png");
-    highscore_marked = load_image("/Users/Martin/Documents/Skolan/LiU/HT -13/TDDI02/Tetris_Complete/Tetris_Complete/Images/PNGs/Highscore2.png");
-    quit_button = load_image("/Users/Martin/Documents/Skolan/LiU/HT -13/TDDI02/Tetris_Complete/Tetris_Complete/Images/PNGs/Quit.png");
-    quit_marked = load_image("/Users/Martin/Documents/Skolan/LiU/HT -13/TDDI02/Tetris_Complete/Tetris_Complete/Images/PNGs/Quit2.png");
+    play_button = load_image("Images/Buttons/Play.png");
+    play_marked = load_image("Images/Buttons/Play2.png");
+    highscore_button = load_image("Images/Buttons/Highscore.png");
+    highscore_marked = load_image("Images/Buttons/Highscore2.png");
+    quit_button = load_image("Images/Buttons/Quit.png");
+    quit_marked = load_image("Images/Buttons/Quit2.png");
     
-    font = TTF_OpenFont( "/Users/Martin/Documents/Skolan/LiU/HT -13/TDDI02/Tetris_Complete/Tetris_Complete/DrawingPad.ttf", 28 );
+    font = TTF_OpenFont("DrawingPad.ttf", 28 );
     
     
     //If there was an error in loading the image
@@ -988,7 +988,7 @@ void view_highscore(bool& quit, string& state, vector< pair<string, int>>& score
     string name;
     int score;
     
-    ifstream file("/Users/Martin/Documents/Skolan/LiU/HT -13/TDDI02/Tetris_Complete/Tetris_Complete/Highscore.txt");
+    ifstream file("Highscore.txt");
     
     while(file >> name >> score)
     {
@@ -1175,9 +1175,9 @@ void save_highscore(bool& quit, string& state, int& score, vector< pair<string, 
                 
                 sort(score_vector.begin(), score_vector.end(), sortFunction);
                 
-                remove("/Users/Martin/Documents/Skolan/LiU/HT -13/TDDI02/Tetris_Complete/Tetris_Complete/Highscore.txt");
+                remove("Highscore.txt");
                 fstream file;
-                file.open("/Users/Martin/Documents/Skolan/LiU/HT -13/TDDI02/Tetris_Complete/Tetris_Complete/Highscore.txt", ios_base::in|ios_base::out|ios_base::trunc);
+                file.open("Highscore.txt", ios_base::in|ios_base::out|ios_base::trunc);
                 
                 
                 for(int i = 0; i < score_vector.size(); ++i)
